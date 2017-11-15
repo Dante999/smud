@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<room>
+	<name>Zum Tropfenden Kessel</name>
+	<description>Der Tropfende Kessel wirkt nicht wie ein bekannter und wichtiger Ort, sondern dunkel und schäbig. Heutzutage wird der kleine, schmuddelig wirkende Pub von dem schon älteren Wirt Tom geführt. Außer der kurzfristigen Bewirtung bietet der Tropfende Kessel auch Übernachtungsmöglichkeiten in der oberen Etage. Außerdem führt hinter der Bar ein schmaler Gang in ein kleines Hinterzimmer, wo nach Absprache mit dem Wirt ungestörte Besprechungen stattfinden können.</description>
+	<exit>
+		<direction>N</direction>
+		<room>winkelgassenstraße_1.xml</room>
+	</exit>
+</room>
