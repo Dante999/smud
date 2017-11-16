@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <room>
-	<name>Winkelgassenstraße 1</name>
-	<description>Du befindest dich auf einem Kopfsteinpflaster. Die Gasse verläuft weiter nördlich. Westlich von dir befindet sich Potages Kesselladen, Östlich von dir befindet sich ein Second-Hand Bücherladen. Südlich von dir befindet sich die Spellunke "zum tropfenden Kessel"</description>
+	<name>Winkelgassenstrasse 1</name>
+	<description>Du befindest dich auf einem Kopfsteinpflaster. Die Gasse verlaeuft weiter noerdlich. Westlich von dir befindet sich Potages Kesselladen, Oestlich von dir befindet sich ein Second-Hand Buecherladen. Suedlich von dir befindet sich die Spellunke "zum tropfenden Kessel"</description>
 	<exit>
 		<direction>N</direction>
-		<room>winkelgassentraße_2</room>
+		<room>winkelgassentrasse_2.xml</room>
 	</exit>
 	<exit>
 		<direction>S</direction>

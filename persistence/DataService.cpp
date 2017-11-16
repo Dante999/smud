@@ -2,7 +2,7 @@
 
 #include <iostream>
 #include "pugixml.hpp"
-
+#include "Directions.h"
 
 
 DataService::DataService()
@@ -29,24 +29,28 @@ Room *DataService::loadRoom(std::string roomPath)
     pugi::xml_node root = doc.document_element();
 
     //std::cout << "Load result: " << result.description() << std::endl;
+    Room *room = new Room();
+
 
     if( result.status == pugi::status_ok )
     {
-        name        = root.child_value("name");
-        description = root.child_value("description");
+        room->setName(root.child_value("name"));
+        room->setDescription(root.child_value("description"));
+
+
+        for (pugi::xml_node roomExit = root.child("exit"); roomExit; roomExit = roomExit.next_sibling("exit"))
+        {
+            int direction = Directions::parseFromString(roomExit.child_value("direction"));
+
+            room->addExit(direction, roomExit.child_value("room"));
+        }
+
     }
     else
     {
-        name        = "error loading room";
-        description = "no description";
+        room->setName("error loading room");
+        room->setDescription("no description");
     }
-
-
-
-    Room *room = new Room();
-
-    room->setName(name);
-    room->setDescription(description);
 
     return room;
 }

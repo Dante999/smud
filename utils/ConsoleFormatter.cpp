@@ -63,10 +63,10 @@ std::string ConsoleFormatter::text(std::string text)
     while( text.length() > 0 )
     {
 
-        if( text.length() >= 78)
+        if( text.length() >= 76)
         {
-            output += ConsoleFormatter::caption(text.substr(0, 78));
-            text.erase(0, 78);
+            output += ConsoleFormatter::caption(text.substr(0, 76));
+            text.erase(0, 76);
         }
         else
         {
@@ -78,3 +78,6 @@ std::string ConsoleFormatter::text(std::string text)
 
     return output;
 }
+
+//TODO:
+// Function to cut-off leading and trailing whitespaces
