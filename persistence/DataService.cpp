@@ -5,6 +5,8 @@
 #include "Directions.h"
 
 
+#define BASEPATH "/home/dante999/Git/smud/gamedata/gameobjects"
+
 DataService::DataService()
 {
     //ctor
@@ -18,7 +20,7 @@ DataService::~DataService()
 Room *DataService::loadRoom(std::string roomPath)
 {
 
-    std::string filepath = "/home/dante999/Git/smud/gamedata/gameobjects/rooms/" + roomPath;
+    std::string filepath = BASEPATH + roomPath;
 
     pugi::xml_document doc;
     std::string name        = "";
@@ -49,8 +51,43 @@ Room *DataService::loadRoom(std::string roomPath)
     else
     {
         room->setName("error loading room");
-        room->setDescription("no description");
+        std::cout << "path: " << filepath << std::endl;
+        room->setDescription(filepath);
     }
 
     return room;
 }
+
+Player* DataService::loadPlayer(std::string playerPath)
+{
+    std::string filepath = BASEPATH + playerPath;
+
+    pugi::xml_document doc;
+    std::string name        = "";
+    std::string description = "";
+    std::string roomPath    = "";
+
+
+    pugi::xml_parse_result result = doc.load_file(filepath.c_str() );
+    pugi::xml_node root = doc.document_element();
+
+    //std::cout << "Load result: " << result.description() << std::endl;
+    Player *player = new Player();
+
+
+    if( result.status == pugi::status_ok )
+    {
+        player->setName(root.child_value("name"));
+        player->setDescription(root.child_value("description"));
+        player->setRoomPath(root.child_value("room"));
+
+    }
+    else
+    {
+        player->setName("error loading player");
+        player->setDescription(filepath);
+    }
+
+    return player;
+}
+

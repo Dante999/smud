@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<gameobject type="room">
+	<name>Qualitaet fuer Quidditch</name>
+	<description>Du befindest dich in einem Beispielraum</description>
+	<exit>
+		<direction>W</direction>
+		<room>/rooms/winkelgasse/winkelgassenstrasse_3.xml</room>
+	</exit>
+</gameobject>

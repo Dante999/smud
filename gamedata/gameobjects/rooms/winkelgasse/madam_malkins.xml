@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<gameobject type="room">
+	<name>Madam Malkins - Anzuege fuer alle Anlaesse</name>
+	<description>Du befindest dich in einem Mada Malkins Anzuege fuer alle Anlaesse. Nach Osten kommst du zurueck auf die Strasse. </description>
+	<exit>
+		<direction>O</direction>
+		<room>/rooms/winkelgasse/winkelgassenstrasse_2.xml</room>
+	</exit>
+</gameobject>

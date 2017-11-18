@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<gameobject type="room">
+	<name>Winkelgassenstrasse 99</name>
+	<description>Du befindest dich in einem Beispielraum</description>
+	<exit>
+		<direction>NW</direction>
+		<room>/rooms/winkelgasse/winkelgassenstrasse_1.xml</room>
+	</exit>
+</gameobject>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<gameobject type="room">
+	<name>Second-Hand Buecherladen</name>
+	<description>Du befindest dich in einem Second-Hand Buecherladen. Nach Westen kommst du wieder zurueck auf die Strasse</description>
+	<exit>
+		<direction>W</direction>
+		<room>/rooms/winkelgasse/winkelgassenstrasse_1.xml</room>
+	</exit>
+</gameobject>

@@ -3,26 +3,29 @@
 
 #include "GameObject.h"
 #include "vector"
+#include "map"
 
 class Room : public GameObject
 {
     private:
-        struct roomExit {int direction; std::string roomName; };
-
-        std::vector<roomExit> m_roomExits;
-        int m_light;
+//        struct roomExit {int direction; std::string roomName; };
 
     public:
         Room();
         virtual ~Room();
 
         std::string toString();
+
         void addExit(int direction, std::string roomName);
+
+
+        std::string getExit(int direction);
 
 
     protected:
 
     private:
+        std::map<int,std::string> m_exits;
 };
 
 #endif // ROOM_H

@@ -60,8 +60,12 @@ std::string ConsoleFormatter::textBlock(std::string textBlock)
 {
     std::string output = "";
 
-    while( textBlock.length() > 0 )
+    while( textBlock.length() > 1 )
     {
+        if( textBlock.at(0) == ' ' )
+        {
+            textBlock.erase(0,1);
+        }
 
         if( textBlock.length() >= 76)
         {

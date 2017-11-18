@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<gameobject type="room">
+	<name>Potages Kesselladen</name>
+	<description>Du befindest dich in einem Potages Kesselladen. Nach Osten kommst du wieder zurueck auf die Strasse.</description>
+	<exit>
+		<direction>O</direction>
+		<room>/rooms/winkelgasse/winkelgassenstrasse_1.xml</room>
+	</exit>
+</gameobject>

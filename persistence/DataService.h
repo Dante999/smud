@@ -3,6 +3,7 @@
 
 #include <string>
 #include "Room.h"
+#include "Player.h"
 
 class DataService
 {
@@ -10,7 +11,8 @@ class DataService
         DataService();
         virtual ~DataService();
 
-    static Room *loadRoom(std::string roomPath);
+    static Room     *loadRoom(std::string roomPath);
+    static Player   *loadPlayer(std::string playerPath);
 
 
     protected:

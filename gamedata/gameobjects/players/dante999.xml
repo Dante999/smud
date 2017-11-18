@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<gameobject type="player">
+	<name>Dante</name>
+	<password>1234</password>
+	<description>ein spieler</description>
+	<room>/rooms/winkelgasse/zum_tropfenden_kessel.xml</room>
+</gameobject>

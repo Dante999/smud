@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<gameobject type="room">
+	<name>Winkelgassenstrasse 3</name>
+	<description>Du befindest dich in einem Beispielraum</description>
+	<exit>
+		<direction>N</direction>
+		<room>/rooms/winkelgasse/winkelgassenstrasse_4.xml</room>
+	</exit>
+	<exit>
+		<direction>W</direction>
+		<room>/rooms/winkelgasse/eeylops_eulenkaufhaus.xml</room>
+	</exit>
+	<exit>
+		<direction>O</direction>
+		<room>/rooms/winkelgasse/qualitaet_fuer_quidditch.xml</room>
+	</exit>
+	<exit>
+		<direction>S</direction>
+		<room>/rooms/winkelgasse/winkelgassenstrasse_2.xml</room>
+	</exit>
+</gameobject>

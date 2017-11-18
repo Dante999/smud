@@ -2,7 +2,8 @@
 
 GameObject::GameObject()
 {
-    //ctor
+    m_name = "not set";
+    m_description = "not set";
 }
 
 GameObject::~GameObject()

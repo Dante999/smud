@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<gameobject type="room">
+	<name>Winkelgassenstrasse 4</name>
+	<description>Du befindest dich in einem Beispielraum</description>
+	<exit>
+		<direction>W</direction>
+		<room>/rooms/winkelgasse/wiseacres_zauberausruestung.xml</room>
+	</exit>
+	<exit>
+		<direction>O</direction>
+		<room>/rooms/winkelgasse/scribbulus_schreibwarenladen.xml</room>
+	</exit>
+	<exit>
+		<direction>S</direction>
+		<room>/rooms/winkelgasse/winkelgassenstrasse_3.xml</room>
+	</exit>
+</gameobject>

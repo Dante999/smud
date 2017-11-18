@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<gameobject type="room">
+	<name>Florean Fortescues Eissalon</name>
+	<description>Du befindest dich in Florean Fortescues Eissalon. Nach Westen kommst du wieder zurueck auf die Strasse. </description>
+	<exit>
+		<direction>W</direction>
+		<room>/rooms/winkelgasse/winkelgassenstrasse_2.xml</room>
+	</exit>
+</gameobject>

@@ -9,23 +9,12 @@
 
 Room::Room()
 {
-    //ctor
+
 }
 
 Room::~Room()
 {
-//
-//    for(int i = m_roomExits.size(); i>=0; i--)
-//    {
-//        roomExit *exit = &m_roomExits[i];
-//
-//        delete exit;
-//
-//    }
-
-    m_roomExits.clear();
-
-
+    //dstor
 }
 
 std::string Room::toString()
@@ -39,13 +28,14 @@ std::string Room::toString()
     result += ConsoleFormatter::textLine("");
     result += ConsoleFormatter::textLine("Es gibt folgende Ausgaenge:");
 
-    for(size_t i=0; i < m_roomExits.size(); i++)
-    {
-        int dir = m_roomExits.at(i).direction;
-        std::string direction   = Directions::parseToString(dir);
-        std::string roomName    = m_roomExits.at(i).roomName;
+    std::map<int, std::string>::iterator it = m_exits.begin();
 
-        // 11
+    while(it != m_exits.end())
+    {
+        int dir = it->first;
+        std::string direction   = Directions::parseToString(dir);
+        std::string roomName    = it->second;
+
         std::string line = "";
 
         line += "   ";
@@ -64,6 +54,8 @@ std::string Room::toString()
         line += roomName;
 
         result += ConsoleFormatter::textLine(line);
+
+        it++;
     }
 
     result += ConsoleFormatter::horizontalLine();
@@ -75,17 +67,21 @@ std::string Room::toString()
 
 void Room::addExit(int direction, std::string room)
 {
-    roomExit exit;
-
-    exit.direction  = direction;
-    exit.roomName   = room;
-
-    m_roomExits.push_back(exit);
-
-//    roomExit *exit = new roomExit;
-
-//    exit->direction = direction;
-//    exit->roomName  = room;
-//
-//    m_roomExits.push_back(*exit);
+    m_exits[direction] = room;
 }
+
+
+std::string Room::getExit(int direction)
+{
+    if(m_exits.find(direction) != m_exits.end())
+    {
+        return m_exits.find(direction)->second;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+
+
