@@ -31,12 +31,12 @@ std::string ConsoleFormatter::horizontalLine()
 }
 
 
-std::string ConsoleFormatter::caption(std::string caption)
+std::string ConsoleFormatter::textLine(std::string textLine)
 {
     int i=0;
     std::string line = "";
 
-    line += "| " + caption;
+    line += "| " + textLine;
 
     if( line.length() > LINE_WIDTH-2)
     {
@@ -56,22 +56,22 @@ std::string ConsoleFormatter::caption(std::string caption)
 
 }
 
-std::string ConsoleFormatter::text(std::string text)
+std::string ConsoleFormatter::textBlock(std::string textBlock)
 {
     std::string output = "";
 
-    while( text.length() > 0 )
+    while( textBlock.length() > 0 )
     {
 
-        if( text.length() >= 76)
+        if( textBlock.length() >= 76)
         {
-            output += ConsoleFormatter::caption(text.substr(0, 76));
-            text.erase(0, 76);
+            output += ConsoleFormatter::textLine(textBlock.substr(0, 76));
+            textBlock.erase(0, 76);
         }
         else
         {
-            output += ConsoleFormatter::caption(text);
-            text = "";
+            output += ConsoleFormatter::textLine(textBlock);
+            textBlock = "";
         }
 
     }

@@ -12,20 +12,20 @@ GameObject::~GameObject()
 
 void GameObject::setName(std::string name)
 {
-    this->name = name;
+    m_name = name;
 }
 
 void GameObject::setDescription(std::string description)
 {
-    this->description = description;
+    m_description = description;
 }
 
 std::string GameObject::getName()
 {
-    return this->name;
+    return m_name;
 }
 
 std::string GameObject::getDescription()
 {
-    return this->description;
+    return m_description;
 }

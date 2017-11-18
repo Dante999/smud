@@ -16,7 +16,7 @@
 		<room>potages_kesselladen.xml</room>
 	</exit>
 	<exit>
-		<direction>O</direction>
+		<direction>NW</direction>
 		<room>second-hand_bookshop.xml</room>
 	</exit>
 </room>

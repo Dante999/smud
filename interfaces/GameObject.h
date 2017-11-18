@@ -15,8 +15,8 @@ class GameObject
         std::string getDescription();
 
     protected:
-        std::string name;
-        std::string description;
+        std::string m_name;
+        std::string m_description;
 };
 
 #endif // GAMEOBJECT_H

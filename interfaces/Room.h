@@ -7,13 +7,10 @@
 class Room : public GameObject
 {
     private:
-        struct roomExit {
-            int direction;
-            std::string roomName;
-        };
+        struct roomExit {int direction; std::string roomName; };
 
-        std::vector<roomExit> roomExits;
-
+        std::vector<roomExit> m_roomExits;
+        int m_light;
 
     public:
         Room();
