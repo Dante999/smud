@@ -2,17 +2,21 @@
 #include "../persistence/DataService.h"
 
 
-        static std::map<std::string,Room*> m_loadedRooms;
+static std::map<std::string,Room*> m_loadedRooms;
+
+
 
 RoomEngine::RoomEngine()
 {
     //ctor
 }
 
+
 RoomEngine::~RoomEngine()
 {
     //dtor
 }
+
 
 Room* RoomEngine::enterRoom(LivingOrganism* player, std::string roomPath)
 {
@@ -23,7 +27,6 @@ Room* RoomEngine::enterRoom(LivingOrganism* player, std::string roomPath)
 
     return m_loadedRooms.find(roomPath)->second;
 }
-
 
 
 Room* RoomEngine::leaveRoom(LivingOrganism* player, std::string roomPath)

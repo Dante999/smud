@@ -47,6 +47,13 @@ Room *DataService::loadRoom(std::string roomPath)
             room->addExit(direction, roomExit.child_value("room"));
         }
 
+        for (pugi::xml_node detail = root.child("detail"); detail; detail = detail.next_sibling("detail"))
+        {
+            room->addDetail(detail.child_value("name"), detail.child_value("description"));
+        }
+
+
+
     }
     else
     {

@@ -15,6 +15,10 @@ class Player : public LivingOrganism
         std::string getRoomPath();
         void setRoomPath(std::string roomPath);
 
+        void print(std::string printToUser);
+        void println(std::string printToUser);
+        std::string readInput();
+
     protected:
 
     private:

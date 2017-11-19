@@ -10,38 +10,47 @@ Directions::~Directions()
     //dtor
 }
 
+
+/*******************************************************************************
+ * function
+ *
+ * @param
+ *
+ * @return  -1  parsing failed
+ *
+ ******************************************************************************/
 int Directions::parseFromString(std::string direction)
 {
 
-    if(direction == "N")
+    if( direction == "N" || direction == "n")
     {
         return NORTH;
     }
-    else if(direction == "NO")
+    else if(direction == "NO" || direction == "no")
     {
         return NORTH_EAST;
     }
-    else if(direction == "NW")
+    else if(direction == "NW" || direction == "nw")
     {
         return NORTH_WEST;
     }
-    else if( direction == "S")
+    else if( direction == "S" || direction == "s")
     {
         return SOUTH;
     }
-    else if(direction == "SO")
+    else if(direction == "SO" || direction == "so")
     {
         return SOUTH_EAST;
     }
-    else if(direction == "SW")
+    else if(direction == "SW" || direction == "sw")
     {
         return SOUTH_WEST;
     }
-    else if(direction == "O")
+    else if(direction == "O" || direction == "o")
     {
         return EAST;
     }
-    else if(direction == "W")
+    else if(direction == "W" || direction == "w")
     {
         return WEST;
     }

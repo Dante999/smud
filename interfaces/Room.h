@@ -16,8 +16,7 @@ class Room : public GameObject
 
         std::string toString();
 
-        void addExit(int direction, std::string roomName);
-
+        void addExit(int direction, std::string roomPath);
 
         std::string getExit(int direction);
 
@@ -26,6 +25,7 @@ class Room : public GameObject
 
     private:
         std::map<int,std::string> m_exits;
+
 };
 
 #endif // ROOM_H

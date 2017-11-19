@@ -7,4 +7,9 @@
 		<direction>N</direction>
 		<room>/rooms/winkelgasse/winkelgassenstrasse_1.xml</room>
 	</exit>
+
+	<detail>
+		<name>tom</name>
+		<description>Tom bewirtet den tropfenden Kessel</description>
+	</detail>
 </gameobject>

@@ -2,6 +2,11 @@
 #define COMMUNICATIONENGINE_H
 
 
+// untersuche <objekt>
+// nimm <objekt> aus <objekt>
+// lege <objekt> aus <objekt>
+
+
 class CommunicationEngine
 {
     public:
