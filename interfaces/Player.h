@@ -7,7 +7,7 @@
 class Player : public LivingOrganism
 {
     public:
-        Player();
+        Player(std::string playerPath);
         virtual ~Player();
 
         std::string toString();
@@ -22,6 +22,7 @@ class Player : public LivingOrganism
     protected:
 
     private:
+        std::string m_playerPath;
         std::string m_password;
         std::string m_roomPath;
 

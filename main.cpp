@@ -16,7 +16,7 @@ int main()
     std::cout << "--------------------" << std::endl;
 
     std::cout << "Spielername:";
-    std::cin >> playerName;
+    getline (std::cin, playerName);
 
     Session *m_session = new Session(playerName);
 

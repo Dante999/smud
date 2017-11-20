@@ -79,7 +79,7 @@ Player* DataService::loadPlayer(std::string playerPath)
     pugi::xml_node root = doc.document_element();
 
     //std::cout << "Load result: " << result.description() << std::endl;
-    Player *player = new Player();
+    Player *player = new Player(playerPath);
 
 
     if( result.status == pugi::status_ok )
@@ -87,7 +87,6 @@ Player* DataService::loadPlayer(std::string playerPath)
         player->setName(root.child_value("name"));
         player->setDescription(root.child_value("description"));
         player->setRoomPath(root.child_value("room"));
-
     }
     else
     {
@@ -97,4 +96,10 @@ Player* DataService::loadPlayer(std::string playerPath)
 
     return player;
 }
+
+void DataService::savePlayer(Player* player)
+{
+
+}
+
 

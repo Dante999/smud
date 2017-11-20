@@ -4,16 +4,16 @@
 #include "Player.h"
 #include "Directions.h"
 #include "InteractionEngine.h"
+#include "CommandParser.h"
 
 Session::Session(std::string playerName)
 {
-    std::string playerPath = "/players/" + playerName + ".xml";
-    m_player = DataService::loadPlayer(playerPath);
-
-    m_player->println(m_player->toString());
+    std::string playerPath    = "/players/" + playerName + ".xml";
+    m_player        = DataService::loadPlayer(playerPath);
 
     Room *room = RoomEngine::enterRoom(m_player, m_player->getRoomPath());
 
+    m_player->println(m_player->toString());
     m_player->print(room->toString());
 
 }
@@ -31,29 +31,5 @@ void Session::execute()
 {
     std::string input = m_player->readInput();
 
-    InteractionEngine::interact(m_player, input);
-
-
-
-
-//    Room *room = RoomEngine::enterRoom(m_player, m_player->getRoomPath());
-//
-//    m_player->print(room->toString());
-//
-//    std::string roomPath    = "";
-//    std::string direction   = m_player->readInput();
-//
-//    int dir = Directions::parseFromString(direction);
-//
-//    roomPath = room->getExit(dir);
-//
-//    if(roomPath != "")
-//    {
-//        room = RoomEngine::enterRoom(m_player, roomPath);
-//        m_player->setRoomPath(roomPath);
-//    }
-//    else{
-//        m_player->println("ungueltige Eingabe");
-//    }
-
+    CommandParser::parse(m_player, input);
 }

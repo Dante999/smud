@@ -1,6 +1,7 @@
 #ifndef LIVINGORGANISM_H
 #define LIVINGORGANISM_H
 
+#include "Gender.h"
 #include "GameObject.h"
 
 class LivingOrganism : public GameObject
@@ -11,10 +12,11 @@ class LivingOrganism : public GameObject
 
     protected:
         int m_level;
+        gender m_gender;
         int m_init_strength;
         int m_init_dextery;
         int m_init_magic;
-        int m_init_health;
+        int m_init_vitality;
 
     private:
 };

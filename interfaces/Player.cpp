@@ -12,8 +12,9 @@
  * @return  none
  *
  ******************************************************************************/
-Player::Player()
+Player::Player(std::string playerPath)
 {
+    m_playerPath = playerPath;
     m_roomPath = "/rooms/winkelgasse/tropfender_kessel.xml";
 }
 
@@ -101,9 +102,9 @@ std::string Player::readInput()
     std::string input;
 
     print(">>");
-    std::cin >> input;
+    //std::cin >> input;
+    getline (std::cin, input);
     println("");
-
     return input;
 }
 

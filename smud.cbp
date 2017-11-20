@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="smud" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/smud" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add directory="interfaces" />
+					<Add directory="core/" />
+					<Add directory="core" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/smud" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add directory="interfaces" />
+					<Add directory="core/" />
+					<Add directory="core" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="core/CommunicationEngine.cpp" />
+		<Unit filename="core/CommunicationEngine.h" />
+		<Unit filename="core/InteractionEngine.cpp" />
+		<Unit filename="core/InteractionEngine.h" />
+		<Unit filename="core/RoomEngine.cpp" />
+		<Unit filename="core/RoomEngine.h" />
+		<Unit filename="interfaces/Directions.cpp" />
+		<Unit filename="interfaces/Directions.h" />
+		<Unit filename="interfaces/GameObject.cpp" />
+		<Unit filename="interfaces/GameObject.h" />
+		<Unit filename="interfaces/LivingOrganism.cpp" />
+		<Unit filename="interfaces/LivingOrganism.h" />
+		<Unit filename="interfaces/Player.cpp" />
+		<Unit filename="interfaces/Player.h" />
+		<Unit filename="interfaces/Room.cpp" />
+		<Unit filename="interfaces/Room.h" />
+		<Unit filename="interfaces/Session.cpp" />
+		<Unit filename="interfaces/Session.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="persistence/DataService.cpp" />
+		<Unit filename="persistence/DataService.h" />
+		<Unit filename="persistence/pugiconfig.hpp" />
+		<Unit filename="persistence/pugixml.cpp" />
+		<Unit filename="persistence/pugixml.hpp" />
+		<Unit filename="utils/ConsoleFormatter.cpp" />
+		<Unit filename="utils/ConsoleFormatter.h" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

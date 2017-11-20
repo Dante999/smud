@@ -14,6 +14,8 @@ class DataService
     static Room     *loadRoom(std::string roomPath);
     static Player   *loadPlayer(std::string playerPath);
 
+    static void savePlayer(Player *player);
+
 
     protected:
 

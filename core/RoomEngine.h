@@ -18,6 +18,7 @@ class RoomEngine
         static Room *enterRoom(LivingOrganism *player, std::string roomPath);
         static Room *goDirection(LivingOrganism* player, std::string roomPath, int direction);
         static Room *leaveRoom(LivingOrganism *player, std::string roomPath);
+        static Room *getRoom(std::string roomPath);
 
     protected:
 

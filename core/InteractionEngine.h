@@ -4,27 +4,25 @@
 #include <string>
 #include "Player.h"
 
-#define ACTION_MOVE     0
-#define ACTION_EXPLORE  1
-
-
-
 
 class InteractionEngine
 {
-    public:
-        InteractionEngine();
-        virtual ~InteractionEngine();
+public:
+    InteractionEngine();
+    virtual ~InteractionEngine();
 
-        static void interact(Player *player, std::string userInput);
+    static void movePlayer(Player *player, int direction);
+    static void exploreDetail(Player *player, GameObject *object, std::string detailName);
+    static void exploreObject(Player *player, GameObject *object);
+    static void exploreRoom(Player *player);
+    static void printHelp(Player *player);
 
 
 
-    protected:
+protected:
 
-    private:
-        static void movePlayer(Player *player, int direction);
-        static void exploreDetail(Player *player, GameObject *object, std::string detailName);
+private:
+
 };
 
 #endif // INTERACTIONENGINE_H

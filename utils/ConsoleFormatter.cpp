@@ -1,5 +1,8 @@
 #include "ConsoleFormatter.h"
 #include <iostream>
+#include <sstream>
+#include <string>
+#include <vector>
 
 #define LINE_WIDTH  80
 
@@ -82,6 +85,32 @@ std::string ConsoleFormatter::textBlock(std::string textBlock)
 
     return output;
 }
+
+
+
+std::string ConsoleFormatter::getWordFromText(unsigned int number, std::string text)
+{
+
+    std::vector<std::string> v;
+
+    std::istringstream buf(text);
+
+    for(std::string word; buf >> word; )
+    {
+        v.push_back(word);
+    }
+
+
+    if(number >= 0 && number < v.size() )
+    {
+        return v.at(number);
+    }
+    else
+    {
+        return "";
+    }
+}
+
 
 //TODO:
 // Function to cut-off leading and trailing whitespaces
