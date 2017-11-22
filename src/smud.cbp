@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="smud" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/smud" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/smud" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="CommandParser.cpp" />
+		<Unit filename="CommandParser.h" />
+		<Unit filename="ConsoleFormatter.cpp" />
+		<Unit filename="ConsoleFormatter.h" />
+		<Unit filename="DataService.cpp" />
+		<Unit filename="DataService.h" />
+		<Unit filename="Directions.cpp" />
+		<Unit filename="Directions.h" />
+		<Unit filename="GameObject.cpp" />
+		<Unit filename="GameObject.h" />
+		<Unit filename="Gender.h" />
+		<Unit filename="InteractionEngine.cpp" />
+		<Unit filename="InteractionEngine.h" />
+		<Unit filename="LivingOrganism.cpp" />
+		<Unit filename="LivingOrganism.h" />
+		<Unit filename="Player.cpp" />
+		<Unit filename="Player.h" />
+		<Unit filename="Room.cpp" />
+		<Unit filename="Room.h" />
+		<Unit filename="RoomEngine.cpp" />
+		<Unit filename="RoomEngine.h" />
+		<Unit filename="Session.cpp" />
+		<Unit filename="Session.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="pugiconfig.hpp" />
+		<Unit filename="pugixml.cpp" />
+		<Unit filename="pugixml.hpp" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
