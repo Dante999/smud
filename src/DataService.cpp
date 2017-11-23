@@ -5,7 +5,7 @@
 #include "Directions.h"
 
 
-#define BASEPATH "/home/dante999/Git/smud/gamedata/gameobjects"
+#define BASEPATH "../gamedata/gameobjects"
 
 DataService::DataService()
 {

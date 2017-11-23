@@ -3,18 +3,14 @@
 #include "Logger.h"
 
 
+#define LOG_NAME    "RoomEngine"
+
 /*******************************************************************************
  * TODO:
  * - delete the rooms again, when no action happens in there for like 30 minutes
  *
  *
  ******************************************************************************/
-
-
-
-
-
-
 
 
 static std::map<std::string,Room*> m_loadedRooms;
@@ -60,7 +56,8 @@ Room* RoomEngine::enterRoom(LivingOrganism* organism, std::string roomPath)
 {
     if(m_loadedRooms.find(roomPath) == m_loadedRooms.end())
     {
-        Logger::println(LOG_INFO, "room " + roomPath + " loaded");
+        Logger::println(LOG_INFO, LOG_NAME, "loading '" + roomPath);
+
         m_loadedRooms[roomPath] = DataService::loadRoom(roomPath);
     }
 

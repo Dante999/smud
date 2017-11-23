@@ -17,7 +17,9 @@ class Logger
         Logger();
         virtual ~Logger();
 
-        static void println(int level, std::string text);
+        static void init();
+        static void println(int level,std::string classname ,std::string text);
+        static std::string getTimestamp();
 
     protected:
 

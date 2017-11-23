@@ -11,6 +11,15 @@ private:
 
 public:
 
+
+    /*******************************************************************************
+     * @brief returns a horizontal line
+     *
+     * @param   none
+     *
+     * @return  a string, filled with '-'
+     *
+     ******************************************************************************/
     static std::string horizontalLine();
     static std::string textLine(std::string textLine);
     static std::string textBlock(std::string textBlock);

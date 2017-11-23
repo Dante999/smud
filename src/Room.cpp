@@ -76,7 +76,7 @@ void Room::addLivingOrganism(LivingOrganism* organism)
 {
     m_livingOrganismMap[organism->getId()] = organism;
 
-    showMessage("Spieler " + organism->getName() + " betritt den raum");
+    showMessage(organism->getName() + " betritt den raum");
 }
 
 
@@ -104,72 +104,72 @@ void Room::showMessage(std::string message)
     }
 }
 
-    /*******************************************************************************
-     * returns the room-information as a string
-     *
-     * @param   none
-     *
-     * @return  the room information as a string
-     *
-     ******************************************************************************/
-    std::string Room::toString()
+/*******************************************************************************
+ * returns the room-information as a string
+ *
+ * @param   none
+ *
+ * @return  the room information as a string
+ *
+ ******************************************************************************/
+std::string Room::toString()
+{
+    std::string result = "";
+
+    result += StringHelper::horizontalLine();
+    result += StringHelper::textLine(this->getName());
+    result += StringHelper::horizontalLine();
+    result += StringHelper::textBlock(this->getDescription());
+    result += StringHelper::textLine("");
+    result += StringHelper::textLine("Es gibt folgende Ausgaenge:");
+
+    std::map<int, std::string>::iterator it = m_exits.begin();
+
+    while(it != m_exits.end())
     {
-        std::string result = "";
+        int dir = it->first;
+        std::string direction   = Directions::parseToString(dir);
+        std::string roomName    = it->second;
 
-        result += StringHelper::horizontalLine();
-        result += StringHelper::textLine(this->getName());
-        result += StringHelper::horizontalLine();
-        result += StringHelper::textBlock(this->getDescription());
-        result += StringHelper::textLine("");
-        result += StringHelper::textLine("Es gibt folgende Ausgaenge:");
+        size_t pos = roomName.find_last_of('/');
 
-        std::map<int, std::string>::iterator it = m_exits.begin();
-
-        while(it != m_exits.end())
+        if( pos > 0)
         {
-            int dir = it->first;
-            std::string direction   = Directions::parseToString(dir);
-            std::string roomName    = it->second;
-
-            size_t pos = roomName.find_last_of('/');
-
-            if( pos > 0)
-            {
-                roomName.erase(0,pos+1);
-            }
-
-            roomName.erase(roomName.find_last_of('.'), 4);
-
-            while(roomName.find ('_') != std::string::npos)
-            {
-                roomName.replace(roomName.find('_'), 1, " ");
-            }
-
-            std::string line = "";
-
-            line += "   ";
-            line += direction;
-
-            if(line.length() < INDENT)
-            {
-                for(size_t j=0; j<line.length()-INDENT; j++ )
-                {
-                    line += " ";
-                }
-
-            }
-
-            line += " -> ";
-            line += roomName;
-
-            result += StringHelper::textLine(line);
-
-            it++;
+            roomName.erase(0,pos+1);
         }
 
-        result += StringHelper::horizontalLine();
+        roomName.erase(roomName.find_last_of('.'), 4);
 
+        while(roomName.find ('_') != std::string::npos)
+        {
+            roomName.replace(roomName.find('_'), 1, " ");
+        }
 
-        return result;
+        std::string line = "";
+
+        line += "   ";
+        line += direction;
+
+        if(line.length() < INDENT)
+        {
+            for(size_t j=0; j<line.length()-INDENT; j++ )
+            {
+                line += " ";
+            }
+
+        }
+
+        line += " -> ";
+        line += roomName;
+
+        result += StringHelper::textLine(line);
+
+        it++;
     }
+
+    result += StringHelper::horizontalLine();
+
+
+    return result;
+}
 

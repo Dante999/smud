@@ -19,7 +19,7 @@ StringHelper::~StringHelper()
 
 
 /*******************************************************************************
- * returns a horizontal line
+ * @brief returns a horizontal line
  *
  * @param   none
  *
@@ -30,11 +30,14 @@ std::string StringHelper::horizontalLine()
 {
     std::string line (LINE_WIDTH, '-');
 
+    line += "\n";
+
     return line;
 }
 
 
-std::string StringHelper::textLine(std::string textLine)
+
+ std::string StringHelper::textLine(std::string textLine)
 {
     int i=0;
     std::string line = "";
