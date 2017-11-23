@@ -48,11 +48,13 @@ Room *DataService::loadRoom(std::string roomPath)
 
         for (pugi::xml_node detail = root.child("detail"); detail; detail = detail.next_sibling("detail"))
         {
-            room->addDetail(detail.child_value("name"), detail.child_value("description"));
+            std::string detailDescription = detail.child_value("description");
+
+            for (pugi::xml_node name = detail.child("name"); name; name = name.next_sibling("name"))
+            {
+                room->addDetail(name.child_value(), detailDescription);
+            }
         }
-
-
-
     }
     else
     {

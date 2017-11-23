@@ -1,5 +1,5 @@
-#ifndef CONSOLEFORMATTER_H
-#define CONSOLEFORMATTER_H
+#ifndef STRINGHELPER_H
+#define STRINGHELPER_H
 
 #include <string>
 
@@ -16,9 +16,11 @@ public:
     static std::string textBlock(std::string textBlock);
     static std::string getWordFromText(unsigned int number, std::string text);
 
+    static std::string tolowerCase(std::string text);
+
 protected:
 
 private:
 };
 
-#endif // CONSOLEFORMATTER_H
+#endif // STRINGHELPER_H

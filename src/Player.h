@@ -12,6 +12,7 @@ class Player : public LivingOrganism
 
         std::string toString();
 
+        std::string getPlayerPath();
         std::string getRoomPath();
         void setRoomPath(std::string roomPath);
 

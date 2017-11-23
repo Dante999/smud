@@ -33,6 +33,12 @@ Player::~Player()
 }
 
 
+std::string Player::getPlayerPath()
+{
+    return m_playerPath;
+}
+
+
 /*******************************************************************************
  * returns the roomPath, where the player is currently
  *

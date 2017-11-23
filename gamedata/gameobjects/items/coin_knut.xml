@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<gameobject type="item">
+	<name>Knut</name>
+	<description>Ein Muenze aus Bronze</description>
+	<price>1</price>
+</gameobject>

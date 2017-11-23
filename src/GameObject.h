@@ -3,6 +3,7 @@
 
 #include <string>
 #include <map>
+#include <vector>
 
 
 class GameObject
@@ -14,7 +15,9 @@ class GameObject
         void setName(std::string name);
         void setDescription(std::string description);
         void addDetail(std::string name, std::string description);
+        void setId(std::string id);
 
+        std::string getId();
         std::string getDetail(std::string name);
         std::string getName();
         std::string getDescription();
@@ -25,7 +28,9 @@ class GameObject
     private:
         std::string m_name;
         std::string m_description;
-        std::map<std::string,std::string> m_details;
+        std::string m_id;
+//        std::vector<std::string> m_detailList;
+        std::map<std::string,std::string> m_detailMap;
 
 };
 

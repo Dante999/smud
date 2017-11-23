@@ -1,5 +1,5 @@
 #include "GameObject.h"
-
+#include "StringHelper.h"
 
 /*******************************************************************************
  * constructor
@@ -98,7 +98,9 @@ std::string GameObject::getDescription()
  ******************************************************************************/
 void GameObject::addDetail(std::string name, std::string description)
 {
-    m_details[name] = description;
+    name = StringHelper::tolowerCase(name);
+
+    m_detailMap[name] = description;
 }
 
 
@@ -112,12 +114,24 @@ void GameObject::addDetail(std::string name, std::string description)
  ******************************************************************************/
 std::string GameObject::getDetail(std::string name)
 {
-    if(m_details.find(name) != m_details.end())
+    if(m_detailMap.find(name) != m_detailMap.end())
     {
-        return m_details.find(name)->second;
+        return m_detailMap.find(name)->second;
     }
     else
     {
         return "";
     }
 }
+
+
+void GameObject::setId(std::string id)
+{
+    m_id = id;
+}
+
+std::string GameObject::getId()
+{
+    return m_id;
+}
+

@@ -45,13 +45,15 @@ InteractionEngine::~InteractionEngine()
  ******************************************************************************/
 void InteractionEngine::movePlayer(Player* player, int direction)
 {
-    Room *room = RoomEngine::enterRoom(player, player->getRoomPath());
+    Room *room = RoomEngine::getRoom(player->getRoomPath());
     std::string roomPath = room->getExit(direction);
 
     if(roomPath != "")
     {
-        room = RoomEngine::enterRoom(player, roomPath);
+        room->removeLivingOrganism(player);
         player->setRoomPath(roomPath);
+
+        room = RoomEngine::enterRoom(player, player->getRoomPath());
         player->println(room->toString());
     }
     else

@@ -1,8 +1,8 @@
 #include "StringHelper.h"
 #include <iostream>
 #include <sstream>
-#include <string>
 #include <vector>
+#include <algorithm>
 
 #define LINE_WIDTH  80
 
@@ -110,6 +110,14 @@ std::string StringHelper::getWordFromText(unsigned int number, std::string text)
         return "";
     }
 }
+
+
+std::string StringHelper::tolowerCase(std::string text)
+{
+    std::transform(text.begin(), text.end(), text.begin(), ::tolower);
+    return text;
+}
+
 
 
 //TODO:

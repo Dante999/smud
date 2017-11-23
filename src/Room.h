@@ -2,6 +2,7 @@
 #define ROOM_H
 
 #include "GameObject.h"
+#include "Player.h"
 #include "vector"
 #include "map"
 
@@ -20,11 +21,15 @@ class Room : public GameObject
 
         std::string getExit(int direction);
 
+        void addLivingOrganism(LivingOrganism *organism);
+        void removeLivingOrganism(LivingOrganism *organism);
+        void showMessage(std::string message);
 
     protected:
 
     private:
         std::map<int,std::string> m_exits;
+        std::map<std::string, LivingOrganism*> m_livingOrganismMap;
 
 };
 

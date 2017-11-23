@@ -41,18 +41,20 @@ CommandParser::~CommandParser()
  * @return  the parsed command (see enum cmd)
  *
  ******************************************************************************/
-cmd CommandParser::convert(std::string const& inString)
+cmd CommandParser::convert(std::string word)
 {
-    if (inString == "n")        return CMD_GOTO_NORTH;
-    if (inString == "s")        return CMD_GOTO_SOUTH;
-    if (inString == "o")        return CMD_GOTO_EAST;
-    if (inString == "w")        return CMD_GOTO_WEST;
-    if (inString == "no")       return CMD_GOTO_NORTH_EAST;
-    if (inString == "nw")       return CMD_GOTO_NORTH_WEST;
-    if (inString == "so")       return CMD_GOTO_SOUTH_EAST;
-    if (inString == "sw")       return CMD_GOTO_SOUTH_WEST;
-    if (inString == "schau")    return CMD_EXPLORE;
-    if (inString == "hilfe")    return CMD_HELP;
+    if (word == "n")            return CMD_GOTO_NORTH;
+    if (word == "s")            return CMD_GOTO_SOUTH;
+    if (word == "o")            return CMD_GOTO_EAST;
+    if (word == "w")            return CMD_GOTO_WEST;
+    if (word == "no")           return CMD_GOTO_NORTH_EAST;
+    if (word == "nw")           return CMD_GOTO_NORTH_WEST;
+    if (word == "so")           return CMD_GOTO_SOUTH_EAST;
+    if (word == "sw")           return CMD_GOTO_SOUTH_WEST;
+    if (word == "schau")        return CMD_EXPLORE;
+    if (word == "untersuche")   return CMD_EXPLORE;
+    if (word == "unt")          return CMD_EXPLORE;
+    if (word == "hilfe")        return CMD_HELP;
     else                        return CMD_NOT_FOUND;
 }
 
@@ -142,6 +144,8 @@ void CommandParser::cmdExplore(Player* player, std::string input)
     {
         Room *room = RoomEngine::getRoom(player->getRoomPath());
         std::string secondWord = StringHelper::getWordFromText(1, input);
+
+        secondWord = StringHelper::tolowerCase(secondWord);
 
         InteractionEngine::exploreDetail(player, room, secondWord);
     }

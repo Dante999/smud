@@ -33,8 +33,6 @@
 		</Compiler>
 		<Unit filename="CommandParser.cpp" />
 		<Unit filename="CommandParser.h" />
-		<Unit filename="ConsoleFormatter.cpp" />
-		<Unit filename="ConsoleFormatter.h" />
 		<Unit filename="DataService.cpp" />
 		<Unit filename="DataService.h" />
 		<Unit filename="Directions.cpp" />
@@ -54,6 +52,8 @@
 		<Unit filename="RoomEngine.h" />
 		<Unit filename="Session.cpp" />
 		<Unit filename="Session.h" />
+		<Unit filename="StringHelper.cpp" />
+		<Unit filename="StringHelper.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="pugiconfig.hpp" />
 		<Unit filename="pugixml.cpp" />
@@ -61,6 +61,7 @@
 		<Extensions>
 			<code_completion />
 			<debugger />
+			<envvars />
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>

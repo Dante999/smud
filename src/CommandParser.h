@@ -31,7 +31,8 @@ class CommandParser
         static void cmdMove(Player *player, std::string input);
         static void cmdExplore(Player *player, std::string input);
         static void cmdHelp(Player *player, std::string input);
-        static cmd convert(std::string const& inString);
+
+        static cmd convert(std::string word);
 };
 
 #endif // COMMANDPARSER_H

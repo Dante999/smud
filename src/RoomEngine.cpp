@@ -1,5 +1,7 @@
 #include "RoomEngine.h"
 #include "DataService.h"
+#include "Logger.h"
+
 
 /*******************************************************************************
  * TODO:
@@ -54,14 +56,19 @@ RoomEngine::~RoomEngine()
  * @return
  *
  ******************************************************************************/
-Room* RoomEngine::enterRoom(LivingOrganism* player, std::string roomPath)
+Room* RoomEngine::enterRoom(LivingOrganism* organism, std::string roomPath)
 {
     if(m_loadedRooms.find(roomPath) == m_loadedRooms.end())
     {
+        Logger::println(LOG_INFO, "room " + roomPath + " loaded");
         m_loadedRooms[roomPath] = DataService::loadRoom(roomPath);
     }
 
-    return m_loadedRooms.find(roomPath)->second;
+    Room *room = m_loadedRooms.find(roomPath)->second;
+
+    room->addLivingOrganism(organism);
+
+    return room;
 }
 
 
@@ -94,5 +101,17 @@ Room* RoomEngine::getRoom(std::string roomPath)
  ******************************************************************************/
 Room* RoomEngine::leaveRoom(LivingOrganism* player, std::string roomPath)
 {
-    return 0;
+    if(m_loadedRooms.find(roomPath) != m_loadedRooms.end())
+    {
+
+    Room *room = m_loadedRooms.find(roomPath)->second;
+    room->removeLivingOrganism(player);
+
+    return room;
+    }
+    else
+    {
+        return 0;
+    }
+
 }
