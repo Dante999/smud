@@ -1,4 +1,4 @@
-#include "InteractionEngine.h"
+#include "GameEngine.h"
 
 #include "StringHelper.h"
 #include "RoomEngine.h"
@@ -13,7 +13,7 @@
  * @return  none
  *
  ******************************************************************************/
-InteractionEngine::InteractionEngine()
+GameEngine::GameEngine()
 {
     //ctor
 }
@@ -27,7 +27,7 @@ InteractionEngine::InteractionEngine()
  * @return  none
  *
  ******************************************************************************/
-InteractionEngine::~InteractionEngine()
+GameEngine::~GameEngine()
 {
     //dtor
 }
@@ -43,7 +43,7 @@ InteractionEngine::~InteractionEngine()
  * @return  none
  *
  ******************************************************************************/
-void InteractionEngine::movePlayer(Player* player, int direction)
+void GameEngine::movePlayer(Player* player, int direction)
 {
     Room *room = RoomEngine::getRoom(player->getRoomPath());
     std::string roomPath = room->getExit(direction);
@@ -71,7 +71,7 @@ void InteractionEngine::movePlayer(Player* player, int direction)
  * @return
  *
  ******************************************************************************/
-void InteractionEngine::exploreDetail(Player *player, GameObject *object, std::string detailName)
+void GameEngine::exploreDetail(Player *player, GameObject *object, std::string detailName)
 {
     std::string detail = object->getDetail(detailName);
 
@@ -94,7 +94,7 @@ void InteractionEngine::exploreDetail(Player *player, GameObject *object, std::s
  * @return
  *
  ******************************************************************************/
-void InteractionEngine::exploreObject(Player* player, GameObject* object)
+void GameEngine::exploreObject(Player* player, GameObject* object)
 {
     player->print(object->getDescription());
 }
@@ -108,7 +108,7 @@ void InteractionEngine::exploreObject(Player* player, GameObject* object)
  * @return
  *
  ******************************************************************************/
-void InteractionEngine::exploreRoom(Player* player)
+void GameEngine::exploreRoom(Player* player)
 {
     Room *room = RoomEngine::getRoom(player->getRoomPath());
 
@@ -124,7 +124,7 @@ void InteractionEngine::exploreRoom(Player* player)
  * @return  none
  *
  ******************************************************************************/
-void InteractionEngine::printHelp(Player *player)
+void GameEngine::printHelp(Player *player)
 {
     std::string result = "";
 

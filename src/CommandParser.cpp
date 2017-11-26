@@ -1,5 +1,5 @@
 #include "CommandParser.h"
-#include "InteractionEngine.h"
+#include "GameEngine.h"
 #include "Directions.h"
 #include "StringHelper.h"
 #include "RoomEngine.h"
@@ -77,35 +77,35 @@ void CommandParser::parse(Player *player, std::string input)
     {
 
     case CMD_GOTO_NORTH:
-        InteractionEngine::movePlayer(player, NORTH);
+        GameEngine::movePlayer(player, NORTH);
         break;
 
     case CMD_GOTO_SOUTH:
-        InteractionEngine::movePlayer(player, SOUTH);
+        GameEngine::movePlayer(player, SOUTH);
         break;
 
     case CMD_GOTO_EAST:
-        InteractionEngine::movePlayer(player, EAST);
+        GameEngine::movePlayer(player, EAST);
         break;
 
     case CMD_GOTO_WEST:
-        InteractionEngine::movePlayer(player, WEST);
+        GameEngine::movePlayer(player, WEST);
         break;
 
     case CMD_GOTO_NORTH_EAST:
-        InteractionEngine::movePlayer(player, NORTH_EAST);
+        GameEngine::movePlayer(player, NORTH_EAST);
         break;
 
     case CMD_GOTO_NORTH_WEST:
-        InteractionEngine::movePlayer(player, NORTH_WEST);
+        GameEngine::movePlayer(player, NORTH_WEST);
         break;
 
     case CMD_GOTO_SOUTH_EAST:
-        InteractionEngine::movePlayer(player, SOUTH_EAST);
+        GameEngine::movePlayer(player, SOUTH_EAST);
         break;
 
     case CMD_GOTO_SOUTH_WEST:
-        InteractionEngine::movePlayer(player, SOUTH_WEST);
+        GameEngine::movePlayer(player, SOUTH_WEST);
         break;
 
     case CMD_EXPLORE:
@@ -113,7 +113,7 @@ void CommandParser::parse(Player *player, std::string input)
         break;
 
     case CMD_HELP:
-        InteractionEngine::printHelp(player);
+        GameEngine::printHelp(player);
         break;
 
     case CMD_NOT_FOUND:
@@ -138,7 +138,7 @@ void CommandParser::cmdExplore(Player* player, std::string input)
 {
     if(StringHelper::getWordFromText(1, input)=="")
     {
-        InteractionEngine::exploreRoom(player);
+        GameEngine::exploreRoom(player);
     }
     else
     {
@@ -147,7 +147,7 @@ void CommandParser::cmdExplore(Player* player, std::string input)
 
         secondWord = StringHelper::tolowerCase(secondWord);
 
-        InteractionEngine::exploreDetail(player, room, secondWord);
+        GameEngine::exploreDetail(player, room, secondWord);
     }
 }
 
@@ -166,13 +166,13 @@ void CommandParser::cmdHelp(Player* player, std::string input)
 {
     if(StringHelper::getWordFromText(1, input)=="")
     {
-        InteractionEngine::exploreRoom(player);
+        GameEngine::exploreRoom(player);
     }
     else
     {
         Room *room = RoomEngine::getRoom(player->getRoomPath());
         std::string secondWord = StringHelper::getWordFromText(1, input);
 
-        InteractionEngine::exploreDetail(player, room, secondWord);
+        GameEngine::exploreDetail(player, room, secondWord);
     }
 }

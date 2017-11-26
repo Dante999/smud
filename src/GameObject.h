@@ -14,22 +14,19 @@ class GameObject
 
         void setName(std::string name);
         void setDescription(std::string description);
-        void addDetail(std::string name, std::string description);
         void setId(std::string id);
+        void addDetail(std::string name, std::string description);
 
-        std::string getId();
-        std::string getDetail(std::string name);
         std::string getName();
         std::string getDescription();
-
-    protected:
-
+        std::string getId();        
+        std::string getDetail(std::string name);
 
     private:
         std::string m_name;
         std::string m_description;
         std::string m_id;
-//        std::vector<std::string> m_detailList;
+
         std::map<std::string,std::string> m_detailMap;
 
 };

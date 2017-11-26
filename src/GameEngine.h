@@ -5,11 +5,11 @@
 #include "Player.h"
 
 
-class InteractionEngine
+class GameEngine
 {
 public:
-    InteractionEngine();
-    virtual ~InteractionEngine();
+    GameEngine();
+    virtual ~GameEngine();
 
     static void movePlayer(Player *player, int direction);
     static void exploreDetail(Player *player, GameObject *object, std::string detailName);

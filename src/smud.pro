@@ -8,7 +8,6 @@ SOURCES += main.cpp \
     DataService.cpp \
     Directions.cpp \
     GameObject.cpp \
-    InteractionEngine.cpp \
     LivingOrganism.cpp \
     Logger.cpp \
     Player.cpp \
@@ -16,7 +15,8 @@ SOURCES += main.cpp \
     Room.cpp \
     RoomEngine.cpp \
     Session.cpp \
-    StringHelper.cpp
+    StringHelper.cpp \
+    GameEngine.cpp
 
 HEADERS += \
     CommandParser.h \
@@ -24,7 +24,6 @@ HEADERS += \
     Directions.h \
     GameObject.h \
     Gender.h \
-    InteractionEngine.h \
     LivingOrganism.h \
     Logger.h \
     Player.h \
@@ -33,5 +32,6 @@ HEADERS += \
     Session.h \
     StringHelper.h \
     pugiconfig.hpp \
-    pugixml.hpp
+    pugixml.hpp \
+    GameEngine.h
 

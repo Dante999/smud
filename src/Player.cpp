@@ -132,6 +132,22 @@ std::string Player::toString()
     result += StringHelper::horizontalLine();
     result += StringHelper::textBlock(this->getDescription());
     result += StringHelper::horizontalLine();
+    result += StringHelper::textLine("Level: " + m_level);
+
+    if( m_gender == MALE)
+    {
+        result += StringHelper::textLine("Geschlecht: Maennlich");
+    }
+    else
+    {
+        result += StringHelper::textLine("Geschlecht: Weiblich");
+    }
+
+    result += StringHelper::textLine("");
+    result += StringHelper::textLine("Leben: " + m_init_vitality);
+    result += StringHelper::textLine("Mana:  " + m_init_magic);
+
+    result += StringHelper::horizontalLine();
 
     return result;
 }

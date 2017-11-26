@@ -75,9 +75,7 @@ Player* DataService::loadPlayer(std::string playerPath)
     pugi::xml_parse_result result = doc.load_file(filepath.c_str() );
     pugi::xml_node root = doc.document_element();
 
-    //std::cout << "Load result: " << result.description() << std::endl;
     Player *player = new Player(playerPath);
-
 
     if( result.status == pugi::status_ok )
     {
@@ -94,9 +92,11 @@ Player* DataService::loadPlayer(std::string playerPath)
     return player;
 }
 
+
+
 void DataService::savePlayer(Player* player)
 {
-
+    // ToDo
 }
 
 

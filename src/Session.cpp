@@ -3,7 +3,7 @@
 #include "RoomEngine.h"
 #include "Player.h"
 #include "Directions.h"
-#include "InteractionEngine.h"
+#include "GameEngine.h"
 #include "CommandParser.h"
 
 Session::Session(std::string playerName)

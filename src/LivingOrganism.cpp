@@ -3,7 +3,7 @@
 LivingOrganism::LivingOrganism()
 {
     m_level = 1;
-//    m_gender = MALE;
+    m_gender = MALE;
 
     m_init_dextery  = 10;
     m_init_magic    = 10;
