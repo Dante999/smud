@@ -3,3 +3,5 @@ obj/
 *.layout
 bin/
 .cccc/
+*.pro.user
+build*/
