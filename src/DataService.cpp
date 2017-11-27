@@ -17,10 +17,10 @@ DataService::~DataService()
     //dtor
 }
 
-Room *DataService::loadRoom(std::string roomPath)
+Room *DataService::loadRoom(std::string path)
 {
 
-    std::string filepath = BASEPATH + roomPath;
+    std::string filepath = BASEPATH + path;
 
     pugi::xml_document doc;
 
@@ -66,16 +66,16 @@ Room *DataService::loadRoom(std::string roomPath)
     return room;
 }
 
-Player* DataService::loadPlayer(std::string playerPath)
+Player* DataService::loadPlayer(std::string path)
 {
-    std::string filepath = BASEPATH + playerPath;
+    std::string filepath = BASEPATH + path;
 
     pugi::xml_document doc;
 
     pugi::xml_parse_result result = doc.load_file(filepath.c_str() );
     pugi::xml_node root = doc.document_element();
 
-    Player *player = new Player(playerPath);
+    Player *player = new Player(path);
 
     if( result.status == pugi::status_ok )
     {
@@ -96,7 +96,24 @@ Player* DataService::loadPlayer(std::string playerPath)
 
 void DataService::savePlayer(Player* player)
 {
-    // ToDo
+    std::string path = BASEPATH + player->getName() + ".xml";
+
+    pugi::xml_document doc;
+
+    pugi::xml_node gameobject = doc.append_child("gameobject");
+
+    gameobject.append_attribute("type") = "player";
+
+    pugi::xml_node name = gameobject.append_child("name");
+    name.append_child(pugi::node_pcdata).set_value(player->getName().c_str());
+
+    pugi::xml_node description = gameobject.append_child("description");
+    description.append_child(pugi::node_pcdata).set_value(player->getDescription().c_str());
+
+    pugi::xml_node room = gameobject.append_child("room");
+    room.append_child(pugi::node_pcdata).set_value(player->getRoomPath().c_str());
+
+    doc.save_file(path.c_str());
 }
 
 

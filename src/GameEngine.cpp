@@ -4,6 +4,8 @@
 #include "RoomEngine.h"
 #include "Room.h"
 #include "Directions.h"
+#include "DataService.h"
+
 
 /*******************************************************************************
  * constructor
@@ -113,6 +115,13 @@ void GameEngine::exploreRoom(Player* player)
     Room *room = RoomEngine::getRoom(player->getRoomPath());
 
     player->print(room->toString());
+}
+
+
+
+void GameEngine::savePlayer(Player *player)
+{
+    DataService::savePlayer(player);
 }
 
 

@@ -52,7 +52,7 @@ RoomEngine::~RoomEngine()
  * @return
  *
  ******************************************************************************/
-Room* RoomEngine::enterRoom(LivingOrganism* organism, std::string roomPath)
+Room* RoomEngine::enterRoom(LivingOrganism *organism, std::string roomPath)
 {
     if(m_loadedRooms.find(roomPath) == m_loadedRooms.end())
     {

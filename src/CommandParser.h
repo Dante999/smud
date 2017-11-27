@@ -16,6 +16,7 @@ enum cmd {
     CMD_GOTO_SOUTH_WEST,
     CMD_EXPLORE,
     CMD_HELP,
+    CMD_SAVE,
 };
 
 class CommandParser

@@ -15,6 +15,7 @@ public:
     static void exploreDetail(Player *player, GameObject *object, std::string detailName);
     static void exploreObject(Player *player, GameObject *object);
     static void exploreRoom(Player *player);
+    static void savePlayer(Player *player);
     static void printHelp(Player *player);
 
 

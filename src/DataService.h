@@ -11,8 +11,8 @@ class DataService
         DataService();
         virtual ~DataService();
 
-    static Room     *loadRoom(std::string roomPath);
-    static Player   *loadPlayer(std::string playerPath);
+    static Room     *loadRoom(std::string path);
+    static Player   *loadPlayer(std::string path);
 
     static void savePlayer(Player *player);
 

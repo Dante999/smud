@@ -55,6 +55,7 @@ cmd CommandParser::convert(std::string word)
     if (word == "untersuche")   return CMD_EXPLORE;
     if (word == "unt")          return CMD_EXPLORE;
     if (word == "hilfe")        return CMD_HELP;
+    if (word == "speichern")    return CMD_SAVE;
     else                        return CMD_NOT_FOUND;
 }
 
@@ -114,6 +115,10 @@ void CommandParser::parse(Player *player, std::string input)
 
     case CMD_HELP:
         GameEngine::printHelp(player);
+        break;
+
+    case CMD_SAVE:
+        GameEngine::savePlayer(player);
         break;
 
     case CMD_NOT_FOUND:
