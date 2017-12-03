@@ -121,6 +121,19 @@ std::string StringHelper::tolowerCase(std::string text)
     return text;
 }
 
+std::string StringHelper::cropLeadingWhitespaces(std::string text)
+{
+    if(text.length() > 0)
+    {
+       while(text.at(0) == ' ')
+       {
+            text.erase(0, 1);
+       }
+    }
+
+
+    return text;
+}
 
 
 //TODO:

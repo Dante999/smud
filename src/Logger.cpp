@@ -8,7 +8,8 @@
 
 #define LOG_LEVEL   LOG_DEBUG
 
-#define CLASS_NAME_SIZE 20
+#define LENGTH_CLASS_NAME   20
+#define LENGTH_LOG_LEVEL    8
 
 Logger::Logger()
 {
@@ -23,9 +24,11 @@ Logger::~Logger()
 void Logger::init()
 {
     std::string classname = "Logger";
+    std::string loglevel = "STARTUP";
 
-    classname.resize(CLASS_NAME_SIZE, ' ');
 
+    classname.resize(LENGTH_CLASS_NAME, ' ');
+    loglevel.resize(LENGTH_LOG_LEVEL, ' ');
 
     std::ofstream logfile;
     logfile.open("logfile.txt", std::ios::out | std::ios::binary);
@@ -33,7 +36,7 @@ void Logger::init()
     logfile << "# Server started                                                  #\n";
     logfile << "###################################################################\n";
     logfile << "\n";
-    logfile << Logger::getTimestamp() << " | " << classname << " | " << "initialized \n";
+    logfile << Logger::getTimestamp() << " | " << loglevel << " | " << classname << " | " << "initialized \n";
     logfile.close();
 
 }
@@ -41,15 +44,18 @@ void Logger::init()
 
 void Logger::println(int level, std::string classname, std::string text)
 {
-    classname.resize(CLASS_NAME_SIZE, ' ');
+    std::string levelStr = Logger::levelAsString(level);
+
+    classname.resize(LENGTH_CLASS_NAME, ' ');
+    levelStr.resize(LENGTH_LOG_LEVEL, ' ');
+
 
     if( level >= LOG_LEVEL)
     {
         std::ofstream logfile;
         logfile.open("logfile.txt", std::ios::out | std::ios::app | std::ios::binary);
-        logfile << Logger::getTimestamp() << " | " << classname << " | " << text << "\n";
+        logfile << Logger::getTimestamp() << " | " << levelStr << " | " << classname << " | " << text << "\n";
         logfile.close();
-
     }
 
 
@@ -71,3 +77,38 @@ std::string Logger::getTimestamp()
 
     return result;
 }
+
+std::string Logger::levelAsString(int loglevel)
+{
+    std::string level = "";
+
+    switch(loglevel)
+    {
+    case LOG_DEBUG:
+        level = "DEBUG";
+        break;
+
+    case LOG_INFO:
+        level = "INFO";
+        break;
+
+    case LOG_CONFIG:
+        level = "CONFIG";
+        break;
+
+    case LOG_WARNING:
+        level = "WARNING";
+        break;
+
+    case LOG_ERROR:
+        level = "ERROR";
+        break;
+
+    default:
+        level = "UNKOWN";
+        break;
+    }
+
+    return level;
+}
+

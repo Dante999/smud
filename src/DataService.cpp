@@ -3,6 +3,11 @@
 #include <iostream>
 #include "pugixml.hpp"
 #include "Directions.h"
+#include "Logger.h"
+
+
+
+#define LOG_NAME    "DataService"
 
 
 #define BASEPATH "../gamedata/gameobjects"
@@ -82,11 +87,15 @@ Player* DataService::loadPlayer(std::string path)
         player->setName(root.child_value("name"));
         player->setDescription(root.child_value("description"));
         player->setRoomPath(root.child_value("room"));
+
+        Logger::println(LOG_INFO, LOG_NAME, "player successfully loaded from path '" + path + "'");
     }
     else
     {
         player->setName("error loading player");
         player->setDescription(filepath);
+
+        Logger::println(LOG_ERROR, LOG_NAME, "player failed to load from path '" + path + "'");
     }
 
     return player;
@@ -96,7 +105,9 @@ Player* DataService::loadPlayer(std::string path)
 
 void DataService::savePlayer(Player* player)
 {
-    std::string path = BASEPATH + player->getName() + ".xml";
+    std::string path = BASEPATH;
+
+    path += "/players/" + player->getName() + ".xml";
 
     pugi::xml_document doc;
 

@@ -20,10 +20,15 @@ class Logger
         static void init();
         static void println(int level,std::string classname ,std::string text);
         static std::string getTimestamp();
+        static std::string levelAsString(int loglevel);
+
 
     protected:
 
     private:
+
+
+
 };
 
 #endif // LOGGER_H
