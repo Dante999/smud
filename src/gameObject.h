@@ -26,6 +26,9 @@ class GameObject
         std::string m_name;
         std::string m_description;
         std::string m_id;
+        std::string m_filepath;
+
+        int m_createdAt;
 
         std::map<std::string,std::string> m_detailMap;
 

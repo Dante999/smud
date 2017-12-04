@@ -1,14 +1,18 @@
 #ifndef LIVINGORGANISM_H
 #define LIVINGORGANISM_H
 
-#include "Gender.h"
-#include "GameObject.h"
+#include "gender.h"
+#include "gameObject.h"
 
 class LivingOrganism : public GameObject
 {
     public:
         LivingOrganism();
         virtual ~LivingOrganism();
+
+        std::string getRoomPath();
+        void setRoomPath(std::string roomPath);
+
 
     protected:
         int m_level;
@@ -19,6 +23,7 @@ class LivingOrganism : public GameObject
         int m_init_vitality;
 
     private:
+        std::string m_roomPath;
 };
 
 #endif // LIVINGORGANISM_H

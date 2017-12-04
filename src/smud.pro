@@ -4,34 +4,38 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += main.cpp \
-    CommandParser.cpp \
-    DataService.cpp \
-    Directions.cpp \
-    GameObject.cpp \
-    LivingOrganism.cpp \
-    Logger.cpp \
-    Player.cpp \
     pugixml.cpp \
-    Room.cpp \
-    RoomEngine.cpp \
-    Session.cpp \
-    StringHelper.cpp \
-    GameEngine.cpp
+    itemstorage.cpp \
+    item.cpp \
+    dataService.cpp \
+    directions.cpp \
+    gameEngine.cpp \
+    gameObject.cpp \
+    livingOrganism.cpp \
+    logger.cpp \
+    player.cpp \
+    room.cpp \
+    roomEngine.cpp \
+    session.cpp \
+    stringHelper.cpp \
+    interpreter.cpp
 
 HEADERS += \
-    CommandParser.h \
-    DataService.h \
-    Directions.h \
-    GameObject.h \
-    Gender.h \
-    LivingOrganism.h \
-    Logger.h \
-    Player.h \
-    Room.h \
-    RoomEngine.h \
-    Session.h \
-    StringHelper.h \
     pugiconfig.hpp \
     pugixml.hpp \
-    GameEngine.h
+    itemstorage.h \
+    item.h \
+    dataService.h \
+    directions.h \
+    gameEngine.h \
+    gameObject.h \
+    gender.h \
+    livingOrganism.h \
+    logger.h \
+    player.h \
+    room.h \
+    roomEngine.h \
+    session.h \
+    stringHelper.h \
+    interpreter.h
 

@@ -1,8 +1,8 @@
-#include "CommandParser.h"
-#include "GameEngine.h"
-#include "Directions.h"
-#include "StringHelper.h"
-#include "RoomEngine.h"
+#include "interpreter.h"
+#include "gameEngine.h"
+#include "directions.h"
+#include "stringHelper.h"
+#include "roomEngine.h"
 
 
 /*******************************************************************************
@@ -13,7 +13,7 @@
  * @return  none
  *
  ******************************************************************************/
-CommandParser::CommandParser()
+Interpreter::Interpreter()
 {
     //ctor
 }
@@ -27,7 +27,7 @@ CommandParser::CommandParser()
  * @return  none
  *
  ******************************************************************************/
-CommandParser::~CommandParser()
+Interpreter::~Interpreter()
 {
     //dtor
 }
@@ -41,7 +41,7 @@ CommandParser::~CommandParser()
  * @return  the parsed command (see enum cmd)
  *
  ******************************************************************************/
-cmd CommandParser::convert(std::string word)
+cmd Interpreter::convert(std::string word)
 {
     if (word == "n")            return CMD_GOTO_NORTH;
     if (word == "s")            return CMD_GOTO_SOUTH;
@@ -70,7 +70,7 @@ cmd CommandParser::convert(std::string word)
  * @return  none
  *
  ******************************************************************************/
-void CommandParser::parse(Player *player, std::string input)
+void Interpreter::parse(Player *player, std::string input)
 {
     std::string firstWord = StringHelper::getWordFromText(0, input);
 
@@ -78,35 +78,35 @@ void CommandParser::parse(Player *player, std::string input)
     {
 
     case CMD_GOTO_NORTH:
-        GameEngine::movePlayer(player, NORTH);
+        GameEngine::walk(player, NORTH);
         break;
 
     case CMD_GOTO_SOUTH:
-        GameEngine::movePlayer(player, SOUTH);
+        GameEngine::walk(player, SOUTH);
         break;
 
     case CMD_GOTO_EAST:
-        GameEngine::movePlayer(player, EAST);
+        GameEngine::walk(player, EAST);
         break;
 
     case CMD_GOTO_WEST:
-        GameEngine::movePlayer(player, WEST);
+        GameEngine::walk(player, WEST);
         break;
 
     case CMD_GOTO_NORTH_EAST:
-        GameEngine::movePlayer(player, NORTH_EAST);
+        GameEngine::walk(player, NORTH_EAST);
         break;
 
     case CMD_GOTO_NORTH_WEST:
-        GameEngine::movePlayer(player, NORTH_WEST);
+        GameEngine::walk(player, NORTH_WEST);
         break;
 
     case CMD_GOTO_SOUTH_EAST:
-        GameEngine::movePlayer(player, SOUTH_EAST);
+        GameEngine::walk(player, SOUTH_EAST);
         break;
 
     case CMD_GOTO_SOUTH_WEST:
-        GameEngine::movePlayer(player, SOUTH_WEST);
+        GameEngine::walk(player, SOUTH_WEST);
         break;
 
     case CMD_EXPLORE:
@@ -139,7 +139,7 @@ void CommandParser::parse(Player *player, std::string input)
  * @return  none
  *
  ******************************************************************************/
-void CommandParser::cmdExplore(Player* player, std::string input)
+void Interpreter::cmdExplore(Player* player, std::string input)
 {
     if(StringHelper::getWordFromText(1, input)=="")
     {
@@ -167,7 +167,7 @@ void CommandParser::cmdExplore(Player* player, std::string input)
  * @return  none
  *
  ******************************************************************************/
-void CommandParser::cmdHelp(Player* player, std::string input)
+void Interpreter::cmdHelp(Player* player, std::string input)
 {
     if(StringHelper::getWordFromText(1, input)=="")
     {

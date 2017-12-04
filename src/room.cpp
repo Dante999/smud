@@ -1,6 +1,6 @@
-#include "Room.h"
-#include "StringHelper.h"
-#include "Directions.h"
+#include "room.h"
+#include "stringHelper.h"
+#include "directions.h"
 
 
 #define INDENT  15
@@ -169,7 +169,28 @@ std::string Room::toString()
 
     result += StringHelper::horizontalLine();
 
+    result += "im Raum befindet sich: \n";
 
+
+    std::vector<std::string>::iterator itemIt;
+    std::vector<std::string> itemList = ItemStorage::toStringList();
+
+    for(size_t i=0; i<itemList.size(); i++)
+    {
+        result += "   ";
+        result += std::to_string(i);
+        result += itemList.at(i);
+        result += "\n";
+    }
+ /*
+    for(itemIt=itemList.begin(); itemIt != itemList.end(); itemIt++)
+    {
+        result += "   ";
+        result += itemIt;
+        result += "\n";
+
+    }
+*/
     return result;
 }
 

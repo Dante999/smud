@@ -13,4 +13,15 @@
 		<name>wirt</name>
 		<description>Tom bewirtet den tropfenden Kessel</description>
 	</detail>
+
+	<item>
+		<filepath>/items/coin_knut.xml</filepath>
+	</item>
+	<item>
+		<filepath>/items/coin_knut.xml</filepath>
+	</item>
+	<item>
+		<filepath>/items/coin_knut.xml</filepath>
+	</item>
+		
 </gameobject>

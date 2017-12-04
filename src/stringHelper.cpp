@@ -1,4 +1,4 @@
-#include "StringHelper.h"
+#include "stringHelper.h"
 #include <iostream>
 #include <sstream>
 #include <vector>
@@ -135,6 +135,8 @@ std::string StringHelper::cropLeadingWhitespaces(std::string text)
     return text;
 }
 
+std::string StringHelper::cropTrailingWhitespaces(std::string text)
+{
+    return text;
+}
 
-//TODO:
-// Function to cut-off leading and trailing whitespaces

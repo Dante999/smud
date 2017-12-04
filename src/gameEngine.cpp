@@ -1,10 +1,10 @@
-#include "GameEngine.h"
+#include "gameEngine.h"
 
-#include "StringHelper.h"
-#include "RoomEngine.h"
-#include "Room.h"
-#include "Directions.h"
-#include "DataService.h"
+#include "stringHelper.h"
+#include "roomEngine.h"
+#include "room.h"
+#include "directions.h"
+#include "dataService.h"
 
 
 /*******************************************************************************
@@ -45,22 +45,22 @@ GameEngine::~GameEngine()
  * @return  none
  *
  ******************************************************************************/
-void GameEngine::movePlayer(Player* player, int direction)
+bool GameEngine::walk(LivingOrganism *organism, int direction)
 {
-    Room *room = RoomEngine::getRoom(player->getRoomPath());
+    Room *room = RoomEngine::getRoom(organism->getRoomPath());
     std::string roomPath = room->getExit(direction);
 
     if(roomPath != "")
     {
-        room->removeLivingOrganism(player);
-        player->setRoomPath(roomPath);
+        room->removeLivingOrganism(organism);
+        organism->setRoomPath(roomPath);
 
-        room = RoomEngine::enterRoom(player, player->getRoomPath());
-        player->println(room->toString());
+        room = RoomEngine::enterRoom(organism, organism->getRoomPath());
+        return true;
     }
     else
     {
-        player->println("ungueltige Eingabe");
+        return false;
     }
 }
 

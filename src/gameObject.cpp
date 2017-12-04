@@ -1,5 +1,5 @@
-#include "GameObject.h"
-#include "StringHelper.h"
+#include "gameObject.h"
+#include "stringHelper.h"
 
 /*******************************************************************************
  * constructor

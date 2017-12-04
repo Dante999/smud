@@ -1,12 +1,14 @@
 #ifndef ROOM_H
 #define ROOM_H
 
-#include "GameObject.h"
-#include "Player.h"
+#include "gameObject.h"
+#include "itemstorage.h"
+#include "player.h"
+#include "item.h"
 #include "vector"
 #include "map"
 
-class Room : public GameObject
+class Room : public GameObject, public ItemStorage
 {
     private:
 //        struct roomExit {int direction; std::string roomName; };

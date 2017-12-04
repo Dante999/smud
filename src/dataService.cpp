@@ -1,9 +1,9 @@
-#include "DataService.h"
+#include "dataService.h"
 
 #include <iostream>
 #include "pugixml.hpp"
-#include "Directions.h"
-#include "Logger.h"
+#include "directions.h"
+#include "logger.h"
 
 
 
@@ -22,10 +22,10 @@ DataService::~DataService()
     //dtor
 }
 
-Room *DataService::loadRoom(std::string path)
+Room *DataService::loadRoom(std::string filepath)
 {
 
-    std::string filepath = BASEPATH + path;
+    filepath = BASEPATH + filepath;
 
     pugi::xml_document doc;
 
@@ -60,27 +60,39 @@ Room *DataService::loadRoom(std::string path)
                 room->addDetail(name.child_value(), detailDescription);
             }
         }
+
+        for (pugi::xml_node item = root.child("item"); item; item = item.next_sibling("item"))
+        {
+            std::string filepath = item.child_value("filepath");
+            room->addItem(DataService::loadItem(filepath));
+
+        }
+
+        Logger::println(LOG_INFO, LOG_NAME, "room successfully loaded from path '" + filepath + "'");
     }
     else
     {
         room->setName("error loading room");
-        std::cout << "path: " << filepath << std::endl;
         room->setDescription(filepath);
+
+        Logger::println(LOG_ERROR, LOG_NAME, "room failed to load from path '" + filepath + "'");
+
+
     }
 
     return room;
 }
 
-Player* DataService::loadPlayer(std::string path)
+Player* DataService::loadPlayer(std::string filepath)
 {
-    std::string filepath = BASEPATH + path;
+    filepath = BASEPATH + filepath;
 
     pugi::xml_document doc;
 
     pugi::xml_parse_result result = doc.load_file(filepath.c_str() );
     pugi::xml_node root = doc.document_element();
 
-    Player *player = new Player(path);
+    Player *player = new Player(filepath);
 
     if( result.status == pugi::status_ok )
     {
@@ -88,17 +100,30 @@ Player* DataService::loadPlayer(std::string path)
         player->setDescription(root.child_value("description"));
         player->setRoomPath(root.child_value("room"));
 
-        Logger::println(LOG_INFO, LOG_NAME, "player successfully loaded from path '" + path + "'");
+        Logger::println(LOG_INFO, LOG_NAME, "player successfully loaded from path '" + filepath + "'");
     }
     else
     {
         player->setName("error loading player");
         player->setDescription(filepath);
 
-        Logger::println(LOG_ERROR, LOG_NAME, "player failed to load from path '" + path + "'");
+        Logger::println(LOG_ERROR, LOG_NAME, "player failed to load from path '" + filepath + "'");
     }
 
     return player;
+}
+
+
+
+Item *DataService::loadItem(std::string filepath)
+{
+    Logger::println(LOG_INFO, LOG_NAME, "loading item from path '" + filepath + "'");
+
+    Item *item = new Item();
+
+    item->setName("testItem");
+
+    return item;
 }
 
 

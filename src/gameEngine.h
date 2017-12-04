@@ -2,8 +2,8 @@
 #define INTERACTIONENGINE_H
 
 #include <string>
-#include "Player.h"
-
+#include "player.h"
+#include "livingOrganism.h"
 
 class GameEngine
 {
@@ -11,7 +11,7 @@ public:
     GameEngine();
     virtual ~GameEngine();
 
-    static void movePlayer(Player *player, int direction);
+    static bool walk(LivingOrganism *organism, int direction);
     static void exploreDetail(Player *player, GameObject *object, std::string detailName);
     static void exploreObject(Player *player, GameObject *object);
     static void exploreRoom(Player *player);

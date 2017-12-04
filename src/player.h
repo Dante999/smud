@@ -2,7 +2,7 @@
 #define PLAYER_H
 
 #include <string>
-#include "LivingOrganism.h"
+#include "livingOrganism.h"
 
 class Player : public LivingOrganism
 {
@@ -13,8 +13,7 @@ class Player : public LivingOrganism
         std::string toString();
 
         std::string getPlayerPath();
-        std::string getRoomPath();
-        void setRoomPath(std::string roomPath);
+
 
         void print(std::string printToUser);
         void println(std::string printToUser);

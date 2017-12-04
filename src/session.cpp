@@ -1,10 +1,10 @@
-#include "Session.h"
-#include "DataService.h"
-#include "RoomEngine.h"
-#include "Player.h"
-#include "Directions.h"
-#include "GameEngine.h"
-#include "CommandParser.h"
+#include "session.h"
+#include "dataService.h"
+#include "roomEngine.h"
+#include "player.h"
+#include "directions.h"
+#include "gameEngine.h"
+#include "interpreter.h"
 
 Session::Session(std::string playerName)
 {
@@ -31,5 +31,5 @@ void Session::execute()
 {
     std::string input = m_player->readInput();
 
-    CommandParser::parse(m_player, input);
+    Interpreter::parse(m_player, input);
 }

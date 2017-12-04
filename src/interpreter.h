@@ -2,7 +2,7 @@
 #define COMMANDPARSER_H
 
 #include <string>
-#include "Player.h"
+#include "player.h"
 
 enum cmd {
     CMD_NOT_FOUND,
@@ -19,11 +19,11 @@ enum cmd {
     CMD_SAVE,
 };
 
-class CommandParser
+class Interpreter
 {
     public:
-        CommandParser();
-        virtual ~CommandParser();
+        Interpreter();
+        virtual ~Interpreter();
         static void parse(Player *player, std::string input);
 
     protected:

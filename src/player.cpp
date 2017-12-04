@@ -1,7 +1,7 @@
-#include "Player.h"
+#include "player.h"
 #include <iostream>
 
-#include "StringHelper.h"
+#include "stringHelper.h"
 
 
 /*******************************************************************************
@@ -39,32 +39,7 @@ std::string Player::getPlayerPath()
 }
 
 
-/*******************************************************************************
- * returns the roomPath, where the player is currently
- *
- * @param   none
- *
- * @return  current roomPath
- *
- ******************************************************************************/
-std::string Player::getRoomPath()
-{
-    return m_roomPath;
-}
 
-
-/*******************************************************************************
- * sets the roomPath, where the player is currently
- *
- * @param   roomPath    path to the room
- *
- * @return  none
- *
- ******************************************************************************/
-void Player::setRoomPath(std::string roomPath)
-{
-    m_roomPath = roomPath;
-}
 
 
 /*******************************************************************************

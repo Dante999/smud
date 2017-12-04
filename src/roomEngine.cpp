@@ -1,6 +1,6 @@
-#include "RoomEngine.h"
-#include "DataService.h"
-#include "Logger.h"
+#include "roomEngine.h"
+#include "dataService.h"
+#include "logger.h"
 
 
 #define LOG_NAME    "RoomEngine"
@@ -96,13 +96,13 @@ Room* RoomEngine::getRoom(std::string roomPath)
  * @return
  *
  ******************************************************************************/
-Room* RoomEngine::leaveRoom(LivingOrganism* player, std::string roomPath)
+Room* RoomEngine::leaveRoom(LivingOrganism* organism, std::string roomPath)
 {
     if(m_loadedRooms.find(roomPath) != m_loadedRooms.end())
     {
 
     Room *room = m_loadedRooms.find(roomPath)->second;
-    room->removeLivingOrganism(player);
+    room->removeLivingOrganism(organism);
 
     return room;
     }
