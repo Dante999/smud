@@ -72,7 +72,7 @@ std::string Room::getExit(int direction)
 }
 
 
-void Room::addLivingOrganism(LivingOrganism *organism)
+void Room::addLife(LivingOrganism *organism)
 {
     m_livingOrganismMap[organism->getId()] = organism;
 
@@ -80,7 +80,7 @@ void Room::addLivingOrganism(LivingOrganism *organism)
 }
 
 
-void Room::removeLivingOrganism(LivingOrganism *organism)
+void Room::removeLife(LivingOrganism *organism)
 {
     showMessage("Spieler " + organism->getName() + " verlaesst den raum");
     m_livingOrganismMap.erase(organism->getId());

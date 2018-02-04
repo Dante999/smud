@@ -52,7 +52,7 @@ bool GameEngine::walk(LivingOrganism *organism, int direction)
 
     if(roomPath != "")
     {
-        room->removeLivingOrganism(organism);
+        room->removeLife(organism);
         organism->setRoomPath(roomPath);
 
         room = RoomEngine::enterRoom(organism, organism->getRoomPath());

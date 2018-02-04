@@ -63,7 +63,7 @@ Room* RoomEngine::enterRoom(LivingOrganism *organism, std::string roomPath)
 
     Room *room = m_loadedRooms.find(roomPath)->second;
 
-    room->addLivingOrganism(organism);
+    room->addLife(organism);
 
     return room;
 }
@@ -102,7 +102,7 @@ Room* RoomEngine::leaveRoom(LivingOrganism* organism, std::string roomPath)
     {
 
     Room *room = m_loadedRooms.find(roomPath)->second;
-    room->removeLivingOrganism(organism);
+    room->removeLife(organism);
 
     return room;
     }

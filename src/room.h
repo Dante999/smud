@@ -23,8 +23,8 @@ class Room : public GameObject, public ItemStorage
 
         std::string getExit(int direction);
 
-        void addLivingOrganism(LivingOrganism *organism);
-        void removeLivingOrganism(LivingOrganism *organism);
+        void addLife(LivingOrganism *organism);
+        void removeLife(LivingOrganism *organism);
         void showMessage(std::string message);
 
     protected:

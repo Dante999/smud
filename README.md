@@ -12,9 +12,11 @@ the LPC-Language to create a mud.
 
 In the current stage, smud only runs locally, like a singleplayer-game. 
 
-src/			holds the source files
-gamedata/		holds the gamedata (rooms, items e.g.)
-documentation/		diagrams e.g.
+The repository is holds the following directories:
+
+   src/                 : holds the source files for the engine
+   gamedata/            : holds the gamedata (rooms, items e.g.)
+   documentation/       : diagrams e.g.
 
 
 
